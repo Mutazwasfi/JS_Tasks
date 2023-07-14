@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+</head>
+<body>
+    <form name="countries">
+        <select name="country" id="country" onchange="changeFlag();">
+            <option value="flags/no_flag.png">Select</option>
+            <option value="flags/Flag_Jor.png">Jordan</option>
+            <option value="flags/Flag_Pl.png">Palestine</option>
+            <option value="flags/Flag_Turk.png">Turkey</option>
+            <option value="flags/Flag_Ca.png">Canada</option>
+        </select>
+    </form>
+
+    <img id="img" src="flags/no_flag.png" style="border: 1px solid black; width: 300px; height: 200px;" alt="No image selected"/>
+</body>
+    <script>
+       function changeFlag() {
+        let sel = document.getElementById("country")
+        let img = document.getElementById("img");
+        img.src = "flags/" + sel.options[sel.selectedindex].value;
+        img.alt = sel.options[sel.selectedindex].text;
+       }
+    </script>
+</html>
