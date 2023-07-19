@@ -8,7 +8,7 @@
 <body>
     <form name="countries">
         <select name="country" id="country" onchange="changeFlag();">
-            <option value="Select">Select</option>
+            <option selected value="Select">Select</option>
             <option value="Jordan">Jordan</option>
             <option value="Palestine">Palestine</option>
             <option value="Turkey">Turkey</option>
@@ -22,8 +22,12 @@
        function changeFlag() {
         let sel = document.querySelector('#country');
         let img = document.querySelector('#img');
-        sel.addEventListener('change' , e => img.src = `flags/${e.target.options[e.target.selectedIndex].value}.png`);
-        img.alt = e.target.options[e.target.selectedIndex].text;
+        sel.addEventListener('change' , e => img.src = `flags/${e.target.options[e.target.selectedIndex].value}`);
+        // img.alt = e.target.options[e.target.selectedIndex].text;
        }
     </script>
+    <!-- <script defer>
+        let select = document.querySelector('#flagnames') , img = document.querySelector('#img');
+        select.addEventListener('change' , e => img.src = `./images/${e.target.options[e.target.selectedIndex].value}.png`)
+      </script> -->
 </html>
